@@ -1,4 +1,4 @@
-# Thilanka-Portfolio
+# Thilanka-Portfolio.gitgub.io
 
 🌐 Portfolio Website – Thilanka Yasodhana Rathnayaka
 
