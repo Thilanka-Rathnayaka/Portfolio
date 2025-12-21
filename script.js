@@ -89,7 +89,7 @@ window.addEventListener('scroll', () => {
 
 // Stats animation
 const stats = document.querySelectorAll('.stat-number');
-const statValues = [7, 100, 15];
+const statValues = [8, 100, 15];
 
 if (stats.length) {
     const observer = new IntersectionObserver((entries) => {
@@ -136,4 +136,5 @@ if (backTop) {
     backTop.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
 }
