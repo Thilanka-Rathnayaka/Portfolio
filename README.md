@@ -1,35 +1,32 @@
-# Thilanka-Portfolio.github.io
-
 🌐 Portfolio Website – Thilanka Yasodhana Rathnayaka
+
+Visit 👉 https://tech-thila.github.io/
 
 This is my personal portfolio website showcasing my experience, skills, and projects as a Senior Technical Officer.
 
-
 🚀 Technologies Used
 
-⦁	HTML5    
+⦁ HTML5
 
-⦁	CSS3    
+⦁ CSS3
 
-⦁	JavaScript    
+⦁ JavaScript
 
-⦁	Font Awesome
-
+⦁ Font Awesome
 
 ✨ Features
 
-⦁	Responsive design
+⦁ Responsive design
 
-⦁	Dark / Light mode    [Need to Update]
+⦁ Dark / Light mode [Need to Update]
 
-⦁	Smooth scrolling
+⦁ Smooth scrolling
 
-⦁	Downloadable CV     [Need to Update]
+⦁ Downloadable CV [Need to Update]
 
-⦁	SEO optimized
+⦁ SEO optimized
 
-⦁	GitHub Pages ready
-
+⦁ GitHub Pages ready
 
 📂 Folder Structure
 
@@ -39,24 +36,24 @@ portfolio/
 
 ├── README.md
 
-├── style.css
+├── assets/
 
-├── main.js
+│ ├── css/style.css
 
-├── profile.jpg 
+│ ├── js/main.js
 
-├── CV.pdf [Update Later]
+│ └── images/profile.jpg
 
+│ └── images/cv.pdf
 
 🌍 Live Demo
 
 Enable GitHub Pages from repository settings.
 
-
 📧 Contact
 
-⦁	Email: thilankayasodhana@gmail.com
+⦁ Email: thilankayasodhana@gmail.com
 
-⦁	Phone: (+94) 71 210 9337
+⦁ Phone: (+94) 71 210 9337
 
-⦁	LinkedIn: https://linkedin.com/in/thilanka-yasodhana-rathnayaka-156647131/
+⦁ LinkedIn: https://linkedin.com/in/thilanka-yasodhana-rathnayaka-156647131/
