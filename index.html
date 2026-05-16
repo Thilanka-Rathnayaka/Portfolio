@@ -1,238 +1,277 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thilanka Yasodhana Rathnayaka - Technical & Cyber Security Professional</title>
+  <title>Thilanka Yasodhana Rathnayaka – Technical & Cyber Security Professional</title>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="header-container">
-      <div class="logo">
+
+  <!-- ══════════════════ HEADER ══════════════════ -->
+  <header id="site-header">
+    <div class="header-inner">
+
+      <a href="#home" class="logo" aria-label="Home">
         <i class="fas fa-shield-alt"></i>
         <span>TYR</span>
-      </div>
-      <nav>
-        <ul id="nav-menu">
-          <li><a href="#home" class="nav-link active">HOME</a></li>
-          <li><a href="#about" class="nav-link">ABOUT</a></li>
-          <li><a href="#skills" class="nav-link">SKILLS</a></li>
-          <li><a href="#experience" class="nav-link">EXPERIENCE</a></li>
-          <li><a href="#projects" class="nav-link">PROJECTS</a></li>
-          <li><a href="#certifications" class="nav-link">CERTIFICATIONS</a></li>
-          <li><a href="#education" class="nav-link">EDUCATION</a></li>
-          <li><a href="#contact" class="nav-link">CONTACT</a></li>
+      </a>
+
+      <nav id="nav-menu" aria-label="Main navigation">
+        <ul>
+          <li><a href="#home"           class="nav-link active">Home</a></li>
+          <li><a href="#about"          class="nav-link">About</a></li>
+          <li><a href="#skills"         class="nav-link">Skills</a></li>
+          <li><a href="#experience"     class="nav-link">Experience</a></li>
+          <li><a href="#projects"       class="nav-link">Projects</a></li>
+          <li><a href="#certifications" class="nav-link">Certifications</a></li>
+          <li><a href="#education"      class="nav-link">Education</a></li>
+          <li><a href="#contact"        class="nav-link">Contact</a></li>
         </ul>
       </nav>
-      <button class="mobile-menu-btn" id="mobile-menu-btn">
-        <i class="fas fa-bars"></i>
-      </button>
+
+      <div class="header-actions">
+        <!-- Dark / Light toggle -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle theme">
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+        <!-- CV Download -->
+        <a href="assets/images/cv.pdf" download="Thilanka_Rathnayaka_CV.pdf" class="btn btn-sm btn-cv" title="Download CV">
+          <i class="fas fa-download"></i>
+          <span>CV</span>
+        </a>
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <ul>
+        <li><a href="#home"           class="nav-link">Home</a></li>
+        <li><a href="#about"          class="nav-link">About</a></li>
+        <li><a href="#skills"         class="nav-link">Skills</a></li>
+        <li><a href="#experience"     class="nav-link">Experience</a></li>
+        <li><a href="#projects"       class="nav-link">Projects</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="#education"      class="nav-link">Education</a></li>
+        <li><a href="#contact"        class="nav-link">Contact</a></li>
+      </ul>
+      <a href="assets/images/cv.pdf" download="Thilanka_Rathnayaka_CV.pdf" class="btn btn-cv mobile-cv">
+        <i class="fas fa-download"></i> Download CV
+      </a>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main id="main-content">
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-      <div class="container">
-        <div class="hero-content">
-          <h1 class="hero-title">THILANKA YASODHANA RATHNAYAKA</h1>
-          <h2 class="hero-subtitle"><i>Senior Technical Officer</h2></i>
-          <p class="hero-text">
-            Results-driven IT professional with 8+ years of experience in system administration, cybersecurity, and enterprise network management. Specialized in implementing secure IT solutions and leading technical operations.
-          </p>
-          <div class="hero-buttons">
-            <a href="#contact" class="btn" id="get-in-touch-btn">GET IN TOUCH</a>
-			<a href="#projects" class="btn btn-secondary" id="view-projects-btn">VIEW PROJECTS</a>
-          </div>
-          <div class="stats">
-            <div class="stat-item">
-              <div class="stat-number" id="years-experience">0+</div>
-              <div class="stat-label">Years Experience</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number" id="clients-served">0+</div>
-              <div class="stat-label">Clients Served</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number" id="certifications1">0+</div>
-              <div class="stat-label">Certifications</div>
-            </div>
-          </div>
+  <!-- ══════════════════ HERO ══════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-bg-grid"></div>
+    <div class="container hero-container">
+
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-shield-alt"></i> Cybersecurity &amp; Networking</div>
+        <h1 class="hero-title">Thilanka<br>Yasodhana<br>Rathnayaka</h1>
+        <h2 class="hero-subtitle">Senior Technical Officer</h2>
+        <p class="hero-text">
+          Results-driven IT professional with 8+ years of experience in system administration, cybersecurity,
+          and enterprise network management. Specialised in implementing secure IT solutions and leading technical operations.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#contact" class="btn" id="get-in-touch-btn">
+            <i class="fas fa-envelope"></i> Get In Touch
+          </a>
+          <a href="#projects" class="btn btn-outline" id="view-projects-btn">
+            <i class="fas fa-code-branch"></i> View Projects
+          </a>
+          <a href="assets/images/cv.pdf" download="Thilanka_Rathnayaka_CV.pdf" class="btn btn-outline btn-cv-hero">
+            <i class="fas fa-file-download"></i> Download CV
+          </a>
         </div>
-        <div class="profile-container">
-          <div class="profile-frame">
-            <img src="assets/images/profile.jpg" alt="Profile Photo" class="profile-photo" />
+
+        <div class="stats">
+          <div class="stat-item">
+            <div class="stat-number" data-target="8">0</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="100">0</div>
+            <div class="stat-label">Clients Served</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="15">0</div>
+            <div class="stat-label">Certifications</div>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- About Section -->
-    <section class="section" id="about">
-      <div class="container">
-        <h2 class="section-title">ABOUT ME</h2>
-        <div class="about-content">
-          <div class="about-text">
-            <h3>BUILDING SECURE DIGITAL INFRASTRUCTURE</h3>
-            <p>I'm a results-driven Senior Technical Officer with over 8 years of progressive experience in IT support, system administration, and cybersecurity. My journey in technology began as a Customer Support Technician at E-W Information Systems Ltd, where I built strong foundations in OS management, networking, and hardware repair.</p>
-            <p>Throughout my career, I've developed proven expertise in diagnosing and resolving complex hardware/software issues, managing enterprise networks, and implementing secure IT solutions. I'm passionate about cybersecurity and continuously work on strengthening data protection measures while ensuring compliance with industry standards.</p>
-            <p>Currently, I lead IT operations at E-W Information Systems Ltd, where I supervise technical teams, oversee critical infrastructure projects, and deliver IT solutions that align with business objectives. I hold a BSc (Hons) in Computer Networks & Security and multiple industry certifications from Microsoft and Cisco.</p>
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-ring">
+          <div class="hero-photo-ring-inner">
+            <img src="assets/images/profile.jpg" alt="Thilanka Yasodhana Rathnayaka" class="hero-photo" />
+          </div>
+        </div>
+        <div class="hero-photo-badge badge-top">
+          <i class="fab fa-cisco"></i> CCNP
+        </div>
+        <div class="hero-photo-badge badge-bottom">
+          <i class="fab fa-microsoft"></i> Azure
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- ══════════════════ ABOUT ══════════════════ -->
+  <section class="section section-alt" id="about">
+    <div class="container">
+      <h2 class="section-title"><span>About Me</span></h2>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <h3 class="about-heading">Building Secure Digital Infrastructure</h3>
+          <p>I'm a results-driven Senior Technical Officer with over <strong>8 years</strong> of progressive experience in IT support, system administration, and cybersecurity. My journey began as a Customer Support Technician at E-W Information Systems Ltd, where I built strong foundations in OS management, networking, and hardware repair.</p>
+          <p>Throughout my career I've developed proven expertise in diagnosing and resolving complex hardware/software issues, managing enterprise networks, and implementing secure IT solutions. I'm passionate about cybersecurity and continuously work on strengthening data protection measures while ensuring compliance with industry standards.</p>
+          <p>Currently I lead IT operations at E-W Information Systems Ltd, supervising technical teams, overseeing critical infrastructure projects, and delivering IT solutions aligned with business objectives. I hold a BSc (Hons) in Computer Networks &amp; Security and multiple industry certifications from Microsoft and Cisco.</p>
+
+          <div class="about-tags">
+            <span><i class="fas fa-check"></i> System Administration</span>
+            <span><i class="fas fa-check"></i> Cybersecurity</span>
+            <span><i class="fas fa-check"></i> Network Engineering</span>
+            <span><i class="fas fa-check"></i> Cloud Infrastructure</span>
+            <span><i class="fas fa-check"></i> Team Leadership</span>
+          </div>
+        </div>
+
+        <div class="about-cards">
+          <div class="about-card">
+            <i class="fas fa-network-wired"></i>
+            <h4>Enterprise Networking</h4>
+            <p>Cisco router &amp; switch configuration, LAN/WAN management, VPN setup.</p>
+          </div>
+          <div class="about-card">
+            <i class="fas fa-shield-halved"></i>
+            <h4>Cybersecurity</h4>
+            <p>Firewalls, IDS/IPS, threat detection, data protection &amp; compliance.</p>
+          </div>
+          <div class="about-card">
+            <i class="fas fa-cloud"></i>
+            <h4>Cloud &amp; Virtualisation</h4>
+            <p>AWS, Azure, Google Cloud, VMware Hyper-V deployments.</p>
+          </div>
+          <div class="about-card">
+            <i class="fas fa-users-gear"></i>
+            <h4>Team Leadership</h4>
+            <p>Mentoring engineers, IT project oversight, stakeholder reporting.</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Skills Section -->
-    <section class="section" id="skills">
-      <div class="container">
-        <h2 class="section-title">SKILLS & TECHNOLOGIES</h2>
-        <div class="skills-grid">
-          <div class="skill-category">
-            <h3><i class="fas fa-network-wired"></i> &nbsp;NETWORKING</h3>
-            <div class="skill-item">
-              <div class="skill-name">TCP/IP, DNS, DHCP</div>
-              <div class="skill-progress"><div class="skill-bar" style="width: 95%;"></div></div>
-              <div class="skill-percentage">95%</div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-name">VPN Configuration</div>
-              <div class="skill-progress"><div class="skill-bar" style="width: 90%;"></div></div>
-              <div class="skill-percentage">90%</div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-name">Router/Switch Config</div>
-              <div class="skill-progress"><div class="skill-bar" style="width: 95%;"></div></div>
-              <div class="skill-percentage">95%</div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-name">LAN/WAN Management</div>
-              <div class="skill-progress"><div class="skill-bar" style="width: 90%;"></div></div>
-              <div class="skill-percentage">90%</div>
-            </div>
-          </div>
-          <div class="skill-category">
-            <h3><i class="fas fa-shield-alt"></i> &nbsp;CYBERSECURITY</h3>
-            <div class="skill-item">
-              <div class="skill-name">Firewalls & IDS</div>
-              <div class="skill-progress"><div class="skill-bar" style="width: 85%;"></div></div>
-              <div class="skill-percentage">85%</div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-name">Security Implementation</div>
-              <div class="skill-progress"><div class="skill-bar" style="width: 90%;"></div></div>
-              <div class="skill-percentage">90%</div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-name">Threat Detection</div>
-              <div class="skill-progress"><div class="skill-bar" style="width: 85%;"></div></div>
-              <div class="skill-percentage">85%</div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-name">Data Protection</div>
-              <div class="skill-progress"><div class="skill-bar" style="width: 90%;"></div></div>
-              <div class="skill-percentage">90%</div>
-            </div>
-          </div>
-          <div class="skill-category">
-            <h3><i class="fas fa-cloud"></i> CLOUD & VIRTUALIZATION</h3>
-			<div class="skill-item">
-              <div class="skill-name">AWS</div>
-              <div class="skill-progress"><div class="skill-bar" style="width: 80%;"></div></div>
-              <div class="skill-percentage">80%</div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-name">Azure</div>
-              <div class="skill-progress"><div class="skill-bar" style="width: 85%;"></div></div>
-              <div class="skill-percentage">85%</div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-name">Google Cloud</div>
-              <div class="skill-progress"><div class="skill-bar" style="width: 80%;"></div></div>
-              <div class="skill-percentage">80%</div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-name">VMware</div>
-              <div class="skill-progress"><div class="skill-bar" style="width: 85%;"></div></div>
-              <div class="skill-percentage">85%</div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-name">Hyper-V</div>
-              <div class="skill-progress"><div class="skill-bar" style="width: 85%;"></div></div>
-              <div class="skill-percentage">85%</div>
-            </div>
-          </div>
-          <div class="skill-category">
-            <h3><i class="fab fa-windows"></i> &nbsp;OPERATING SYSTEMS</h3>
-            <div class="skill-item">
-              <div class="skill-name">Windows Server</div>
-              <div class="skill-progress"><div class="skill-bar" style="width: 95%;"></div></div>
-              <div class="skill-percentage">95%</div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-name">Linux Administration</div>
-              <div class="skill-progress"><div class="skill-bar" style="width: 85%;"></div></div>
-              <div class="skill-percentage">85%</div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-name">macOS</div>
-              <div class="skill-progress"><div class="skill-bar" style="width: 80%;"></div></div>
-              <div class="skill-percentage">80%</div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-name">Active Directory</div>
-              <div class="skill-progress"><div class="skill-bar" style="width: 90%;"></div></div>
-              <div class="skill-percentage">90%</div>
-            </div>
-          </div>
+  <!-- ══════════════════ SKILLS ══════════════════ -->
+  <section class="section" id="skills">
+    <div class="container">
+      <h2 class="section-title"><span>Skills &amp; Technologies</span></h2>
+      <div class="skills-grid">
+
+        <div class="skill-category">
+          <h3><i class="fas fa-network-wired"></i> Networking</h3>
+          <div class="skill-item"><span class="skill-name">TCP/IP, DNS, DHCP</span><div class="skill-track"><div class="skill-bar" data-width="95"></div></div><span class="skill-pct">95%</span></div>
+          <div class="skill-item"><span class="skill-name">VPN Configuration</span><div class="skill-track"><div class="skill-bar" data-width="90"></div></div><span class="skill-pct">90%</span></div>
+          <div class="skill-item"><span class="skill-name">Router / Switch Config</span><div class="skill-track"><div class="skill-bar" data-width="95"></div></div><span class="skill-pct">95%</span></div>
+          <div class="skill-item"><span class="skill-name">LAN / WAN Management</span><div class="skill-track"><div class="skill-bar" data-width="90"></div></div><span class="skill-pct">90%</span></div>
         </div>
-      </div>
-    </section>
 
-    <!-- Experience Section -->
-    <section class="section" id="experience">
-      <div class="container">
-        <h2 class="section-title">WORK EXPERIENCE</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-date">AUG 2025 - PRESENT</div>
-            <div class="timeline-title">Senior Technical Officer</div>
-            <div class="timeline-company">
-              <p>E-W Information Systems Ltd (EWIS)&nbsp;</p>
-              <p>• Colombo, Sri Lanka</p>
+        <div class="skill-category">
+          <h3><i class="fas fa-shield-alt"></i> Cybersecurity</h3>
+          <div class="skill-item"><span class="skill-name">Firewalls &amp; IDS</span><div class="skill-track"><div class="skill-bar" data-width="85"></div></div><span class="skill-pct">85%</span></div>
+          <div class="skill-item"><span class="skill-name">Security Implementation</span><div class="skill-track"><div class="skill-bar" data-width="90"></div></div><span class="skill-pct">90%</span></div>
+          <div class="skill-item"><span class="skill-name">Threat Detection</span><div class="skill-track"><div class="skill-bar" data-width="85"></div></div><span class="skill-pct">85%</span></div>
+          <div class="skill-item"><span class="skill-name">Data Protection</span><div class="skill-track"><div class="skill-bar" data-width="90"></div></div><span class="skill-pct">90%</span></div>
+        </div>
+
+        <div class="skill-category">
+          <h3><i class="fas fa-cloud"></i> Cloud &amp; Virtualisation</h3>
+          <div class="skill-item"><span class="skill-name">AWS</span><div class="skill-track"><div class="skill-bar" data-width="80"></div></div><span class="skill-pct">80%</span></div>
+          <div class="skill-item"><span class="skill-name">Azure</span><div class="skill-track"><div class="skill-bar" data-width="85"></div></div><span class="skill-pct">85%</span></div>
+          <div class="skill-item"><span class="skill-name">Google Cloud</span><div class="skill-track"><div class="skill-bar" data-width="80"></div></div><span class="skill-pct">80%</span></div>
+          <div class="skill-item"><span class="skill-name">VMware / Hyper-V</span><div class="skill-track"><div class="skill-bar" data-width="85"></div></div><span class="skill-pct">85%</span></div>
+        </div>
+
+        <div class="skill-category">
+          <h3><i class="fab fa-windows"></i> Operating Systems</h3>
+          <div class="skill-item"><span class="skill-name">Windows Server</span><div class="skill-track"><div class="skill-bar" data-width="95"></div></div><span class="skill-pct">95%</span></div>
+          <div class="skill-item"><span class="skill-name">Linux Administration</span><div class="skill-track"><div class="skill-bar" data-width="85"></div></div><span class="skill-pct">85%</span></div>
+          <div class="skill-item"><span class="skill-name">macOS</span><div class="skill-track"><div class="skill-bar" data-width="80"></div></div><span class="skill-pct">80%</span></div>
+          <div class="skill-item"><span class="skill-name">Active Directory</span><div class="skill-track"><div class="skill-bar" data-width="90"></div></div><span class="skill-pct">90%</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ EXPERIENCE ══════════════════ -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <h2 class="section-title"><span>Work Experience</span></h2>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-date"><i class="fas fa-calendar-alt"></i> Aug 2025 – Present</span>
+              <span class="timeline-badge current">Current</span>
             </div>
-            <div class="timeline-status">CURRENT</div>
+            <h3 class="timeline-title">Senior Technical Officer</h3>
+            <p class="timeline-company"><i class="fas fa-building"></i> E-W Information Systems Ltd (EWIS) &bull; Colombo, Sri Lanka</p>
             <ul class="timeline-points">
               <li>Lead IT operations and provide enterprise-level technical support and infrastructure management</li>
               <li>Supervise and mentor junior engineers and technicians to improve efficiency and service quality</li>
               <li>Oversee projects including advanced TV display repairs, monitor repair, smart home IoT simulations, and enterprise network upgrades</li>
-              <li>Implement cybersecurity strategies to strengthen data protection and ensure compliance with organizational policies</li>
+              <li>Implement cybersecurity strategies to strengthen data protection and ensure compliance with organisational policies</li>
             </ul>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-date">MAR 2023 - JUL 2025</div>
-            <div class="timeline-title">Customer Support Engineer</div>
-            <div class="timeline-company">
-              <p>E-W Information Systems Ltd (EWIS)&nbsp;</p>
-              <p>• Colombo, Sri Lanka</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-date"><i class="fas fa-calendar-alt"></i> Mar 2023 – Jul 2025</span>
             </div>
+            <h3 class="timeline-title">Customer Support Engineer</h3>
+            <p class="timeline-company"><i class="fas fa-building"></i> E-W Information Systems Ltd (EWIS) &bull; Colombo, Sri Lanka</p>
             <ul class="timeline-points">
               <li>Resolved hardware, software, and networking issues for 100+ clients, reducing downtime</li>
-              <li>Configured and optimized enterprise routers, switches, and wireless access points</li>
+              <li>Configured and optimised enterprise routers, switches, and wireless access points</li>
               <li>Delivered training to end users and new hires, achieving 95% satisfaction ratings</li>
               <li>Contributed to cybersecurity measures and implemented system performance enhancements</li>
             </ul>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-date">NOV 2017 - FEB 2023</div>
-            <div class="timeline-title">Customer Support Technician</div>
-            <div class="timeline-company">
-              <p>E-W Information Systems Ltd (EWIS)</p>
-              <p>&nbsp;• Kurunegala, Sri Lanka</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-date"><i class="fas fa-calendar-alt"></i> Nov 2017 – Feb 2023</span>
             </div>
+            <h3 class="timeline-title">Customer Support Technician</h3>
+            <p class="timeline-company"><i class="fas fa-building"></i> E-W Information Systems Ltd (EWIS) &bull; Kurunegala, Sri Lanka</p>
             <ul class="timeline-points">
               <li>Provided first-line support for hardware/software issues and basic networking troubleshooting</li>
               <li>Assisted in installations, maintenance, and system upgrades for client systems</li>
@@ -240,317 +279,325 @@
             </ul>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section class="section" id="projects">
-      <div class="container">
-        <h2 class="section-title">FEATURED PROJECTS</h2>
-        <div class="projects-grid">
-			<div class="project-card">
-            <div class="project-header">
-              <h3 class="project-title"> <img src="https://skillicons.dev/icons?i=aws" width="18"/> AWS - Cloud Infrastructure</h3>
-              <div class="project-client">⚖️ Ministry of Justice</div>
-              <div class="project-date">Dec 2025 - Present</div>
-            </div>
-            <div class="project-body">
-              <p class="project-description">This project represents the AWS cloud infrastructure design and implementation for a Ministry of Justice (MOJ) web application and database system.</p>
-              <div class="project-tags">
-                <span class="project-tag">High availability and fault tolerance</span>
-                <span class="project-tag">Secure government-grade infrastructure</span>
-                <span class="project-tag">Disaster recovery readiness</span>
-                <span class="project-tag">Scalable cloud foundation</span>
-              </div>
-              <div class="project-impact">
-                <div class="project-impact-title">IMPACT</div>
-                <p>AWS infrastructure design and planning, ensuring security and compliance alignment, and overseeing implementation to validate that deployments meet required standards.</p>
-              </div>
-            </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ PROJECTS ══════════════════ -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section-title"><span>Featured Projects</span></h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-header">
+            <h3 class="project-title"><img src="https://skillicons.dev/icons?i=aws" width="20" alt="AWS" /> AWS Cloud Infrastructure</h3>
+            <div class="project-client"><i class="fas fa-balance-scale"></i> Ministry of Justice</div>
+            <div class="project-date"><i class="fas fa-calendar"></i> Dec 2025 – Present</div>
           </div>
-			<div class="project-card">
-            <div class="project-header">
-              <h3 class="project-title"> 🪟 MS 365 Tenant Administration</h3>
-              <div class="project-client">Playpen Montessori</div>
-              <div class="project-date">Dec 2025 - Present</div>
+          <div class="project-body">
+            <p class="project-description">AWS cloud infrastructure design and implementation for a Ministry of Justice web application and database system.</p>
+            <div class="project-tags">
+              <span class="tag">High Availability</span>
+              <span class="tag">Fault Tolerance</span>
+              <span class="tag">Gov-Grade Security</span>
+              <span class="tag">Disaster Recovery</span>
             </div>
-            <div class="project-body">
-              <p class="project-description">Serving as the Microsoft 365 Tenant Administrator for Playpen Montessori, overseeing a secure, compliant, and license-efficient cloud environment that supports communication, collaboration, and identity management for academic and administrative users.</p>
-              <div class="project-tags">
-                <span class="project-tag">MS 365 Tenant Administration</span>
-                <span class="project-tag">Managed licensing</span>
-                <span class="project-tag">Microsoft Entra ID</span>
-              </div>
-              <div class="project-impact">
-                <div class="project-impact-title">IMPACT</div>
-                <p>I serve as a Microsoft 365 Tenant Administrator, managing licenses and users, enforcing security and access controls, and providing end-user support while optimizing the tenant environment.</p>
-              </div>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-header">
-              <h3 class="project-title">ROUTERS REPAIR PROJECT</h3>
-              <div class="project-client">Dialog Axiata PLC</div>
-              <div class="project-date">May 2023 - January 2024</div>
-            </div>
-            <div class="project-body">
-              <p class="project-description">Led comprehensive diagnostics, repair, and testing operations for enterprise-grade routers and switches. Implemented systematic troubleshooting protocols and quality assurance measures to ensure optimal network performance.</p>
-              <div class="project-tags">
-                <span class="project-tag">Network Diagnostics</span>
-                <span class="project-tag">Router Configuration</span>
-                <span class="project-tag">Hardware Repair</span>
-                <span class="project-tag">Quality Assurance</span>
-              </div>
-              <div class="project-impact">
-                <div class="project-impact-title">IMPACT</div>
-                <p>Restored critical network infrastructure for one of Sri Lanka's leading telecommunications providers</p>
-              </div>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-header">
-              <h3 class="project-title">MONITOR REPAIR PROJECT</h3>
-              <div class="project-client">E-W Information Systems Ltd</div>
-              <div class="project-date">February 2024 - May 2024</div>
-            </div>
-            <div class="project-body">
-              <p class="project-description">Executed systematic repair and restoration of defective monitors, implementing cost-effective solutions to increase IT asset reusability. Developed efficient diagnostic procedures and repair workflows.</p>
-              <div class="project-tags">
-                <span class="project-tag">Hardware Diagnostics</span>
-                <span class="project-tag">Component Repair</span>
-                <span class="project-tag">Asset Management</span>
-                <span class="project-tag">Cost Optimization</span>
-              </div>
-              <div class="project-impact">
-                <div class="project-impact-title">IMPACT</div>
-                <p>Significantly reduced IT hardware costs by extending monitor lifecycle and improving asset utilization</p>
-              </div>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-header">
-              <h3 class="project-title">DISPLAY REPAIR PROJECT</h3>
-              <div class="project-client">EWIS Colombo Ltd</div>
-              <div class="project-date">June 2024 - August 2024</div>
-            </div>
-            <div class="project-body">
-              <p class="project-description">Specialized in advanced repair of LED, LCD, and Smart TV displays ranging from 32" to 65". Mastered complex display panel diagnostics, backlighting systems, and smart TV electronics troubleshooting.</p>
-              <div class="project-tags">
-                <span class="project-tag">Display Technology</span>
-                <span class="project-tag">Electronics Repair</span>
-                <span class="project-tag">Smart TV Systems</span>
-                <span class="project-tag">Technical Training</span>
-              </div>
-              <div class="project-impact">
-                <div class="project-impact-title">IMPACT</div>
-                <p>Provided cost-effective repair solutions for consumer electronics, reducing replacement costs</p>
-              </div>
+            <div class="project-impact">
+              <div class="project-impact-title"><i class="fas fa-chart-line"></i> Impact</div>
+              <p>AWS infrastructure design ensuring security and compliance alignment, overseeing implementation to validate deployments meet required standards.</p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Certifications Section -->
-    <section class="section" id="certifications">
-      <div class="container">
-        <h2 class="section-title">AWARDS & CERTIFICATIONS</h2>
-        <div class="certifications-grid">
-          <div class="certification-category">
-            <h3><i class="fas fa-trophy"></i> &nbsp;ISLAND 1ST PLACE</h3>
-            <div class="certification-item">
-			  <i class="fas fa-award"></i><br>
-              <div class="certification-name"><B>-Computer Hardware-</B><br/>Skills Competition Organized by Tertiary & Vocational Education Commission of Sri Lanka</div>
-              <div class="certification-date">2016/2017</div>
-            </div>
+        <div class="project-card">
+          <div class="project-header">
+            <h3 class="project-title"><i class="fab fa-microsoft"></i> MS 365 Tenant Administration</h3>
+            <div class="project-client"><i class="fas fa-school"></i> Playpen Montessori</div>
+            <div class="project-date"><i class="fas fa-calendar"></i> Dec 2025 – Present</div>
           </div>
-          <div class="certification-category">
-            <h3><i class="fas fa-trophy"></i> UPCOMING BRANCH AWARD</h3>
-            <div class="certification-item">
-              <i class="fas fa-award"></i>
-              <div class="certification-name">&nbsp;E-W Information Systems Ltd</div>
-              <div class="certification-date">2017</div>
+          <div class="project-body">
+            <p class="project-description">Microsoft 365 Tenant Administrator overseeing a secure, compliant, and license-efficient cloud environment supporting communication, collaboration, and identity management.</p>
+            <div class="project-tags">
+              <span class="tag">M365 Administration</span>
+              <span class="tag">License Management</span>
+              <span class="tag">Entra ID</span>
             </div>
-          </div>
-          <div class="certification-category">
-            <h3><i class="fab fa-microsoft"></i>&nbsp; MICROSOFT&nbsp; &nbsp; &nbsp;CERTIFICATIONS</h3>
-		<div class="certification-item">
-            <i class="fas fa-check-circle"></i>
-            <div class="certification-name">&nbsp;Microsoft Innovative Educator</div>
-              
+            <div class="project-impact">
+              <div class="project-impact-title"><i class="fas fa-chart-line"></i> Impact</div>
+              <p>Managing licenses, enforcing security and access controls, and providing end-user support while optimising the tenant environment.</p>
             </div>
-            <div class="certification-item">
-              <i class="fas fa-check-circle"></i>
-              <div class="certification-name">&nbsp;Microsoft Advanced Educator</div>
-             
-            </div>
-            <div class="certification-item">
-              <i class="fas fa-check-circle"></i>
-              <div class="certification-name">&nbsp;MS-900 Microsoft 365 Fundamentals</div>
-             
-            </div>
-            <div class="certification-item">
-              <i class="fas fa-check-circle"></i>
-              <div class="certification-name">&nbsp;Microsoft Azure Fundamentals</div>
-              <div class="certification-date">&nbsp;</div>
-            </div>
-          </div>
-          <div class="certification-category">
-            <h3><i class="fab fa-cisco"></i> CISCO CERTIFICATIONS</h3>
-            <div class="certification-item">
-              <i class="fas fa-check-circle"></i>
-              <div class="certification-name">&nbsp;IT Essentials</div>
-              <div class="certification-date">2024</div>
-            </div>
-            <div class="certification-item">
-              <i class="fas fa-check-circle"></i>
-              <div class="certification-name">&nbsp;Networking Essentials</div>
-              <div class="certification-date">2024</div>
-            </div>
-            <div class="certification-item">
-              <i class="fas fa-check-circle"></i>
-              <div class="certification-name">&nbsp;Introduction to Cybersecurity</div>
-              <div class="certification-date">2024</div>
-            </div>
-          </div>
-			 <div class="certification-category">
-            <h3><i class="fab fa-ibm"></i>&nbsp; IBM CERTIFICATIONS</h3>
-		<div class="certification-item">
-            <i class="fas fa-check-circle"></i>
-            <div class="certification-name">&nbsp;Cybersecurity Fundamentals</div>
-              
-            </div>
-            <div class="certification-item">
-              <i class="fas fa-check-circle"></i>
-              <div class="certification-name">&nbsp;Cloud Computing Fundamentals</div>
-             
-            </div>
-            </div>
-			 <div class="certification-category">
-            <h3><i class="fab fa-hack fix"></i>&nbsp; Hack & Fix Academy</h3>
-		<div class="certification-item">
-            <i class="fas fa-check-circle"></i>
-            <div class="certification-name">&nbsp;Certified Phishing Prevention Specialist (CPPS)</div>
-              
-            </div>
-            <div class="certification-item">
-              <i class="fas fa-check-circle"></i>
-              <div class="certification-name">&nbsp;Cybersecurity Career Starter Certification (CCSC)</div>
-             
-            </div>
-            </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education Section -->
-    <section class="section" id="education">
-      <div class="container">
-        <h2 class="section-title">EDUCATION</h2>
-        <div class="education-grid">
-          <div class="education-item">
-            <h3><i class="fas fa-graduation-cap"></i>&nbsp;BSc(Hons) Computer &nbsp;Networks &amp; Security</h3>
-            <div class="education-institution">Wrexham Glyndwr University of UK</div>
-            <div class="education-location">Via LondonTech City Campus, Sri Lanka</div>
-            <div class="education-date">2025</div>
-          </div>
-          <div class="education-item">
-            <h3><i class="fas fa-graduation-cap"></i> &nbsp; Diploma in &nbsp;Information &nbsp;Technology</h3>
-            <div class="education-institution">Wayamba University of Sri Lanka</div>
-            <div class="education-location">Kuliyapitiya</div>
-            <div class="education-date">2018</div>
-          </div>
-          <div class="education-item">
-            <h3><i class="fas fa-graduation-cap"></i> NVQ - IV in Computer Hardware Technician</h3>
-            <div class="education-institution">Vocational Training Authority of Sri Lanka</div>
-            <div class="education-location">Kurunegala</div>
-            <div class="education-date">2016</div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-      <div class="container">
-        <h2 class="section-title">GET IN TOUCH</h2>
-        <div class="contact-container">
-          <div class="contact-info">
-            <h3>CONTACT INFORMATION</h3>
-            <p>I'm always open to discussing new opportunities, collaborations, or projects. Feel free to reach out through any of the following channels:</p>
-            <p>&nbsp;</p>
-<div class="contact-details">
-            <div class="contact-detail">
-                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                <div>
-<div class="contact-value">thilankayasodhana@gmail.com</div>
-                </div>
-              </div>
-              <div class="contact-detail">
-                <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                <div>
-<div class="contact-value">(+94) 71 210 9337</div>
-                </div>
-              </div>
-              <div class="contact-detail">
-                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                <div>
-<div class="contact-value">Alawwa,NWP, Sri Lanka</div>
-                </div>
-              </div>
-              <div class="contact-detail">
-                <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-                <div>
-<div class="contact-value">thilanka-yasodhana-rathnayaka-156647131</div>
-                </div>
-              </div>
-              <div class="contact-detail">
-                <div class="contact-icon"><i class="fab fa-github"></i></div>
-                <div>
-<div class="contact-value">github.com/Thilanka-Rathnayaka</div>
-                </div>
-            </div>
-            </div>
+        <div class="project-card">
+          <div class="project-header">
+            <h3 class="project-title"><i class="fas fa-server"></i> Routers Repair Project</h3>
+            <div class="project-client"><i class="fas fa-broadcast-tower"></i> Dialog Axiata PLC</div>
+            <div class="project-date"><i class="fas fa-calendar"></i> May 2023 – Jan 2024</div>
           </div>
-          <div class="contact-form">
-            <form id="contact-form">
-              <div class="form-group">
-                <label for="name" class="form-label">YOUR NAME</label>
-                <input type="text" id="name" class="form-input" placeholder="Ex: Thilanka Rathnayaka" required />
-              </div>
-              <div class="form-group">
-                <label for="email" class="form-label">YOUR EMAIL</label>
-                <input type="email" id="email" class="form-input" placeholder="Ex thilanka@email.com" required />
-              </div>
-              <div class="form-group">
-                <label for="subject" class="form-label">SUBJECT</label>
-                <input type="text" id="subject" class="form-input" placeholder="Project Inquiry" required />
-              </div>
-              <div class="form-group">
-                <label for="message" class="form-label">MESSAGE</label>
-                <textarea id="message" class="form-input form-textarea" placeholder="Your message here..." required></textarea>
-              </div>
-              <button type="submit" class="btn">SEND MESSAGE <i class="fas fa-paper-plane"></i></button>
-            </form>
+          <div class="project-body">
+            <p class="project-description">Led comprehensive diagnostics, repair, and testing operations for enterprise-grade routers and switches with systematic troubleshooting protocols and quality assurance.</p>
+            <div class="project-tags">
+              <span class="tag">Network Diagnostics</span>
+              <span class="tag">Router Config</span>
+              <span class="tag">Hardware Repair</span>
+              <span class="tag">QA</span>
+            </div>
+            <div class="project-impact">
+              <div class="project-impact-title"><i class="fas fa-chart-line"></i> Impact</div>
+              <p>Restored critical network infrastructure for one of Sri Lanka's leading telecommunications providers.</p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
 
-  <!-- Footer -->
+        <div class="project-card">
+          <div class="project-header">
+            <h3 class="project-title"><i class="fas fa-desktop"></i> Monitor Repair Project</h3>
+            <div class="project-client"><i class="fas fa-building"></i> E-W Information Systems Ltd</div>
+            <div class="project-date"><i class="fas fa-calendar"></i> Feb 2024 – May 2024</div>
+          </div>
+          <div class="project-body">
+            <p class="project-description">Systematic repair and restoration of defective monitors, implementing cost-effective solutions to increase IT asset reusability with efficient diagnostic procedures.</p>
+            <div class="project-tags">
+              <span class="tag">Hardware Diagnostics</span>
+              <span class="tag">Component Repair</span>
+              <span class="tag">Asset Management</span>
+              <span class="tag">Cost Optimisation</span>
+            </div>
+            <div class="project-impact">
+              <div class="project-impact-title"><i class="fas fa-chart-line"></i> Impact</div>
+              <p>Significantly reduced IT hardware costs by extending monitor lifecycle and improving asset utilisation.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <h3 class="project-title"><i class="fas fa-tv"></i> Display Repair Project</h3>
+            <div class="project-client"><i class="fas fa-building"></i> EWIS Colombo Ltd</div>
+            <div class="project-date"><i class="fas fa-calendar"></i> Jun 2024 – Aug 2024</div>
+          </div>
+          <div class="project-body">
+            <p class="project-description">Specialised repair of LED, LCD, and Smart TV displays ranging from 32″ to 65″. Mastered complex display panel diagnostics, backlighting systems, and smart TV electronics.</p>
+            <div class="project-tags">
+              <span class="tag">Display Technology</span>
+              <span class="tag">Electronics Repair</span>
+              <span class="tag">Smart TV Systems</span>
+              <span class="tag">Technical Training</span>
+            </div>
+            <div class="project-impact">
+              <div class="project-impact-title"><i class="fas fa-chart-line"></i> Impact</div>
+              <p>Provided cost-effective repair solutions for consumer electronics, reducing replacement costs substantially.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ CERTIFICATIONS ══════════════════ -->
+  <section class="section section-alt" id="certifications">
+    <div class="container">
+      <h2 class="section-title"><span>Awards &amp; Certifications</span></h2>
+      <div class="certs-grid">
+
+        <!-- Awards -->
+        <div class="cert-category">
+          <h3 class="cert-cat-title"><i class="fas fa-trophy"></i> Island 1st Place</h3>
+          <div class="cert-item cert-award">
+            <i class="fas fa-award cert-icon gold"></i>
+            <div>
+              <div class="cert-name"><strong>Computer Hardware</strong> – Skills Competition</div>
+              <div class="cert-sub">Tertiary &amp; Vocational Education Commission of Sri Lanka</div>
+              <div class="cert-date">2016 / 2017</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-category">
+          <h3 class="cert-cat-title"><i class="fas fa-trophy"></i> Upcoming Branch Award</h3>
+          <div class="cert-item cert-award">
+            <i class="fas fa-award cert-icon gold"></i>
+            <div>
+              <div class="cert-name">E-W Information Systems Ltd</div>
+              <div class="cert-date">2017</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Microsoft -->
+        <div class="cert-category">
+          <h3 class="cert-cat-title"><i class="fab fa-microsoft"></i> Microsoft Certifications</h3>
+          <div class="cert-item"><i class="fas fa-check-circle cert-icon"></i><div><div class="cert-name">Microsoft Innovative Educator</div></div></div>
+          <div class="cert-item"><i class="fas fa-check-circle cert-icon"></i><div><div class="cert-name">Microsoft Advanced Educator</div></div></div>
+          <div class="cert-item"><i class="fas fa-check-circle cert-icon"></i><div><div class="cert-name">MS-900: Microsoft 365 Fundamentals</div></div></div>
+          <div class="cert-item"><i class="fas fa-check-circle cert-icon"></i><div><div class="cert-name">Microsoft Azure Fundamentals</div></div></div>
+        </div>
+
+        <!-- Cisco -->
+        <div class="cert-category">
+          <h3 class="cert-cat-title"><i class="fab fa-cisco"></i> Cisco Certifications</h3>
+          <div class="cert-item"><i class="fas fa-check-circle cert-icon"></i><div><div class="cert-name">IT Essentials</div><div class="cert-date">2024</div></div></div>
+          <div class="cert-item"><i class="fas fa-check-circle cert-icon"></i><div><div class="cert-name">Networking Essentials</div><div class="cert-date">2024</div></div></div>
+          <div class="cert-item"><i class="fas fa-check-circle cert-icon"></i><div><div class="cert-name">Introduction to Cybersecurity</div><div class="cert-date">2024</div></div></div>
+          <!-- NEW 2026 -->
+          <div class="cert-item cert-new">
+            <i class="fas fa-check-circle cert-icon"></i>
+            <div>
+              <div class="cert-name">CCNA: Introduction to Networks <span class="cert-badge">New</span></div>
+              <div class="cert-date">2026</div>
+            </div>
+          </div>
+          <div class="cert-item cert-new">
+            <i class="fas fa-check-circle cert-icon"></i>
+            <div>
+              <div class="cert-name">CCNP: Core Networking <span class="cert-badge">New</span></div>
+              <div class="cert-date">2026</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- IBM -->
+        <div class="cert-category">
+          <h3 class="cert-cat-title"><i class="fab fa-ibm"></i> IBM Certifications</h3>
+          <div class="cert-item"><i class="fas fa-check-circle cert-icon"></i><div><div class="cert-name">Cybersecurity Fundamentals</div></div></div>
+          <div class="cert-item"><i class="fas fa-check-circle cert-icon"></i><div><div class="cert-name">Cloud Computing Fundamentals</div></div></div>
+        </div>
+
+        <!-- Hack & Fix Academy -->
+        <div class="cert-category">
+          <h3 class="cert-cat-title"><i class="fas fa-bug"></i> Hack &amp; Fix Academy</h3>
+          <div class="cert-item"><i class="fas fa-check-circle cert-icon"></i><div><div class="cert-name">Certified Phishing Prevention Specialist (CPPS)</div></div></div>
+          <div class="cert-item"><i class="fas fa-check-circle cert-icon"></i><div><div class="cert-name">Cybersecurity Career Starter Certification (CCSC)</div></div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ EDUCATION ══════════════════ -->
+  <section class="section" id="education">
+    <div class="container">
+      <h2 class="section-title"><span>Education</span></h2>
+      <div class="education-grid">
+
+        <div class="education-card">
+          <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="edu-body">
+            <h3>BSc (Hons) Computer Networks &amp; Security</h3>
+            <div class="edu-institution">Wrexham Glyndŵr University, UK</div>
+            <div class="edu-sub">Via LondonTech City Campus, Sri Lanka</div>
+            <div class="edu-year">2025</div>
+          </div>
+        </div>
+
+        <div class="education-card">
+          <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="edu-body">
+            <h3>Diploma in Information Technology</h3>
+            <div class="edu-institution">Wayamba University of Sri Lanka</div>
+            <div class="edu-sub">Kuliyapitiya</div>
+            <div class="edu-year">2018</div>
+          </div>
+        </div>
+
+        <div class="education-card">
+          <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="edu-body">
+            <h3>NVQ – IV in Computer Hardware Technician</h3>
+            <div class="edu-institution">Vocational Training Authority of Sri Lanka</div>
+            <div class="edu-sub">Kurunegala</div>
+            <div class="edu-year">2016</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ CONTACT ══════════════════ -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <h2 class="section-title"><span>Get In Touch</span></h2>
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <p>I'm always open to discussing new opportunities, collaborations, or projects. Feel free to reach out through any of the following channels.</p>
+
+          <div class="contact-list">
+            <a href="mailto:thilankayasodhana@gmail.com" class="contact-item">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div><div class="contact-label">Email</div><div class="contact-val">thilankayasodhana@gmail.com</div></div>
+            </a>
+            <a href="tel:+94712109337" class="contact-item">
+              <div class="contact-icon"><i class="fas fa-phone"></i></div>
+              <div><div class="contact-label">Phone</div><div class="contact-val">(+94) 71 210 9337</div></div>
+            </a>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div><div class="contact-label">Location</div><div class="contact-val">Alawwa, NWP, Sri Lanka</div></div>
+            </div>
+            <a href="https://www.linkedin.com/in/thilanka-yasodhana-rathnayaka-156647131/" target="_blank" rel="noopener" class="contact-item">
+              <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+              <div><div class="contact-label">LinkedIn</div><div class="contact-val">thilanka-yasodhana-rathnayaka</div></div>
+            </a>
+            <a href="https://github.com/Thilanka-Rathnayaka" target="_blank" rel="noopener" class="contact-item">
+              <div class="contact-icon"><i class="fab fa-github"></i></div>
+              <div><div class="contact-label">GitHub</div><div class="contact-val">github.com/Thilanka-Rathnayaka</div></div>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Thilanka Rathnayaka" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Your message here…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-full">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+            <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ FOOTER ══════════════════ -->
   <footer>
     <div class="container">
-      <div class="footer-container">
+      <div class="footer-grid">
+
         <div class="footer-brand">
-          <div class="footer-logo">
-            <i class="fas fa-shield-alt"></i>
-            <span>TYR</span>
-          </div>
-          <p class="footer-text">Building secure digital infrastructure with expertise and dedication.</p>
+          <div class="footer-logo"><i class="fas fa-shield-alt"></i> TYR</div>
+          <p>Building secure digital infrastructure with expertise and dedication.</p>
+          <a href="assets/images/cv.pdf" download="Thilanka_Rathnayaka_CV.pdf" class="btn btn-outline btn-sm footer-cv-btn">
+            <i class="fas fa-file-download"></i> Download CV
+          </a>
         </div>
-        <div class="footer-links">
-          <h3>QUICK LINKS</h3>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
           <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -558,8 +605,9 @@
             <li><a href="#experience">Experience</a></li>
           </ul>
         </div>
-        <div class="footer-links">
-          <h3>SECTIONS</h3>
+
+        <div class="footer-col">
+          <h4>Sections</h4>
           <ul>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#certifications">Certifications</a></li>
@@ -567,38 +615,30 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
-        <div class="footer-contact">
-          <h3>CONNECT</h3>
+
+        <div class="footer-col">
+          <h4>Connect</h4>
           <ul>
             <li><a href="mailto:thilankayasodhana@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
             <li><a href="tel:+94712109337"><i class="fas fa-phone"></i> Phone</a></li>
-            <li><a href="https://www.linkedin.com/in/thilanka-yasodhana-rathnayaka-156647131/"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
-            <li><a href="https://github.com/Thilanka-Rathnayaka"><i class="fab fa-github"></i> GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/thilanka-yasodhana-rathnayaka-156647131/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+            <li><a href="https://github.com/Thilanka-Rathnayaka" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></li>
           </ul>
         </div>
+
       </div>
+
       <div class="footer-bottom">
-        <p>&copy; 2025 Thilanka Yasodhana Rathnayaka. All rights reserved.</p>
+        <p>&copy; 2026 Thilanka Yasodhana Rathnayaka. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Back to Top Button -->
-  <div class="back-to-top" id="back-to-top">
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
     <i class="fas fa-arrow-up"></i>
-  </div>
+  </button>
 
-  <!-- JS -->
   <script src="assets/js/main.js"></script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
