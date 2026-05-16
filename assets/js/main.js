@@ -1,139 +1,227 @@
-// Mobile Menu Toggle
-const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-const navMenu = document.getElementById('nav-menu');
+/* ═══════════════════════════════════════════════
+   THILANKA YASODHANA RATHNAYAKA — Portfolio JS
+   ═══════════════════════════════════════════════ */
 
-if (mobileMenuBtn && navMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('show');
-    });
+'use strict';
+
+/* ── 1. THEME (Dark / Light) ── */
+const root        = document.documentElement;
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon   = document.getElementById('theme-icon');
+
+// Persist preference; default to 'dark'
+let currentTheme = localStorage.getItem('tyr-theme') || 'dark';
+applyTheme(currentTheme);
+
+function applyTheme(theme) {
+  root.setAttribute('data-theme', theme);
+  if (themeIcon) {
+    themeIcon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+  }
+  currentTheme = theme;
+  localStorage.setItem('tyr-theme', theme);
 }
 
-// Scroll to section
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+  });
+}
+
+
+/* ── 2. MOBILE HAMBURGER MENU ── */
+const hamburger  = document.getElementById('hamburger');
+const mobileNav  = document.getElementById('mobile-nav');
+
+function closeMobileNav() {
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  mobileNav.classList.remove('open');
+  mobileNav.setAttribute('aria-hidden', 'true');
+}
+
+if (hamburger && mobileNav) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    mobileNav.classList.toggle('open', isOpen);
+    mobileNav.setAttribute('aria-hidden', !isOpen);
+  });
+}
+
+// Close mobile nav on link click
+document.querySelectorAll('.mobile-nav .nav-link').forEach(link => {
+  link.addEventListener('click', closeMobileNav);
+});
+
+// Close when clicking outside
+document.addEventListener('click', (e) => {
+  if (
+    mobileNav && mobileNav.classList.contains('open') &&
+    !mobileNav.contains(e.target) &&
+    !hamburger.contains(e.target)
+  ) {
+    closeMobileNav();
+  }
+});
+
+
+/* ── 3. SMOOTH SCROLL ── */
 function scrollToSection(id) {
-    const section = document.getElementById(id);
-    if (section) {
-        window.scrollTo({
-            top: section.offsetTop - 80,
-            behavior: 'smooth'
-        });
-    }
+  const section = document.getElementById(id);
+  if (!section) return;
+  const headerH = parseInt(getComputedStyle(root).getPropertyValue('--header-h')) || 72;
+  window.scrollTo({
+    top: section.offsetTop - headerH,
+    behavior: 'smooth',
+  });
 }
 
-// Button functionality
+// All nav links (desktop + mobile)
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href').slice(1);
+    scrollToSection(targetId);
+    setActiveLink(targetId);
+  });
+});
+
+// Hero CTA buttons
 const getInTouchBtn = document.getElementById('get-in-touch-btn');
 const viewProjectsBtn = document.getElementById('view-projects-btn');
 
-if (getInTouchBtn) {
-    getInTouchBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        scrollToSection('contact');
-    });
+getInTouchBtn?.addEventListener('click', (e) => { e.preventDefault(); scrollToSection('contact'); });
+viewProjectsBtn?.addEventListener('click', (e) => { e.preventDefault(); scrollToSection('projects'); });
+
+
+/* ── 4. ACTIVE NAV HIGHLIGHT ON SCROLL ── */
+function setActiveLink(id) {
+  document.querySelectorAll('.nav-link').forEach(l => {
+    l.classList.toggle('active', l.getAttribute('href') === '#' + id);
+  });
 }
 
-if (viewProjectsBtn) {
-    viewProjectsBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        scrollToSection('projects');
-    });
+const sections = Array.from(document.querySelectorAll('section[id]'));
+
+function onScroll() {
+  const scrollY = window.scrollY;
+  const headerH = parseInt(getComputedStyle(root).getPropertyValue('--header-h')) || 72;
+
+  // Active section
+  let current = sections[0]?.id || '';
+  for (const sec of sections) {
+    if (scrollY >= sec.offsetTop - headerH - 10) current = sec.id;
+  }
+  setActiveLink(current);
+
+  // Header shadow
+  const header = document.getElementById('site-header');
+  header?.classList.toggle('scrolled', scrollY > 20);
+
+  // Back to top
+  const backBtn = document.getElementById('back-to-top');
+  backBtn?.classList.toggle('show', scrollY > 400);
 }
 
-// Nav link smooth scroll + active state
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        scrollToSection(targetId);
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll(); // run once on load
 
-        document.querySelectorAll('.nav-link').forEach(navLink => {
-            navLink.classList.remove('active');
-        });
-        this.classList.add('active');
 
-        if (navMenu && navMenu.classList.contains('show')) {
-            navMenu.classList.remove('show');
-        }
-    });
+/* ── 5. BACK TO TOP ── */
+document.getElementById('back-to-top')?.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Active nav on scroll
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
-    let current = '';
 
-    sections.forEach(section => {
-        const top = section.offsetTop - 100;
-        const height = section.offsetHeight;
-        if (window.scrollY >= top && window.scrollY < top + height) {
-            current = section.getAttribute('id');
-        }
-    });
+/* ── 6. ANIMATED STAT COUNTERS ── */
+function animateCounter(el) {
+  const target = parseInt(el.getAttribute('data-target'), 10);
+  if (isNaN(target)) return;
+  const duration = 1800;
+  const step = 16;
+  const increment = Math.max(1, Math.ceil(target / (duration / step)));
+  let current = 0;
 
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').substring(1) === current) {
-            link.classList.add('active');
-        }
-    });
-
-    // Back to top button
-    const backBtn = document.getElementById('back-to-top');
-    if (backBtn) {
-        if (window.scrollY > 300) {
-            backBtn.classList.add('show');
-        } else {
-            backBtn.classList.remove('show');
-        }
+  const tick = () => {
+    current += increment;
+    if (current >= target) {
+      el.textContent = target + '+';
+    } else {
+      el.textContent = current + '+';
+      requestAnimationFrame(tick);
     }
+  };
+  requestAnimationFrame(tick);
+}
+
+const statObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target);
+      statObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.stat-number[data-target]').forEach(el => statObserver.observe(el));
+
+
+/* ── 7. ANIMATED SKILL BARS (on scroll) ── */
+const skillBarObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const bar = entry.target;
+      const width = bar.getAttribute('data-width');
+      if (width) bar.style.width = width + '%';
+      skillBarObserver.unobserve(bar);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.skill-bar[data-width]').forEach(bar => skillBarObserver.observe(bar));
+
+
+/* ── 8. CONTACT FORM ── */
+const form     = document.getElementById('contact-form');
+const feedback = document.getElementById('form-feedback');
+
+if (form && feedback) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    feedback.className = 'form-feedback';
+    feedback.textContent = '';
+
+    // Basic validation
+    const name    = form.name.value.trim();
+    const email   = form.email.value.trim();
+    const subject = form.subject.value.trim();
+    const message = form.message.value.trim();
+
+    if (!name || !email || !subject || !message) {
+      feedback.className = 'form-feedback error';
+      feedback.textContent = 'Please fill in all fields.';
+      return;
+    }
+    const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRx.test(email)) {
+      feedback.className = 'form-feedback error';
+      feedback.textContent = 'Please enter a valid email address.';
+      return;
+    }
+
+    // Simulate submission (replace with fetch() to real endpoint)
+    feedback.className = 'form-feedback success';
+    feedback.textContent = '✓ Thank you! Your message has been received. I\'ll be in touch soon.';
+    form.reset();
+  });
+}
+
+
+/* ── 9. FOOTER / MOBILE NAV — smooth scroll for anchor links ── */
+document.querySelectorAll('footer a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    scrollToSection(this.getAttribute('href').slice(1));
+  });
 });
-
-// Stats animation
-const stats = document.querySelectorAll('.stat-number');
-const statValues = [8, 100, 15];
-
-if (stats.length) {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const target = entry.target;
-                const index = Array.from(stats).indexOf(target);
-                const end = statValues[index];
-                let current = 0;
-                const duration = 2000;
-                const step = Math.ceil(end / (duration / 16));
-
-                const animate = () => {
-                    current += step;
-                    if (current > end) {
-                        target.textContent = end + '+';
-                        observer.unobserve(target);
-                    } else {
-                        target.textContent = current + '+';
-                        requestAnimationFrame(animate);
-                    }
-                };
-                animate();
-            }
-        });
-    }, { threshold: 0.5 });
-
-    stats.forEach(stat => observer.observe(stat));
-}
-
-// Form handling
-const form = document.getElementById('contact-form');
-if (form) {
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Thank you! This is a demo form.');
-        form.reset();
-    });
-}
-
-// Back to top
-const backTop = document.getElementById('back-to-top');
-if (backTop) {
-    backTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-}
