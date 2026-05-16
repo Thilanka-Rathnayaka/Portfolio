@@ -18,11 +18,11 @@ This is my personal portfolio website showcasing my experience, skills, and proj
 
 ⦁ Responsive design
 
-⦁ Dark / Light mode [Need to Update]
+⦁ Dark / Light mode
 
 ⦁ Smooth scrolling
 
-⦁ Downloadable CV [Need to Update]
+⦁ Downloadable CV
 
 ⦁ SEO optimized
 
